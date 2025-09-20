@@ -1,0 +1,516 @@
+/* --- Variabel Warna untuk Light & Dark Mode --- */
+:root {
+    /* Tema Gelap (Default) */
+    --bg-color: #0f0f1a;
+    --text-color: #e0e0e0;
+    --heading-color: #ffffff;
+    --card-bg: rgba(26, 26, 46, 0.25);
+    --border-color: rgba(0, 229, 255, 0.2);
+    --shadow-color: rgba(0, 229, 255, 0.1);
+    --primary-accent: #00e5ff;
+    --accent-text-color: #0f0f1a;
+    --timeline-dot-bg: #0f0f1a;
+    --logo-filter: invert(0);
+}
+
+body.light-mode {
+    /* Tema Terang */
+    --bg-color: #f0f2f5;
+    --text-color: #33374d;
+    --heading-color: #1a1a2e;
+    --card-bg: rgba(255, 255, 255, 0.5);
+    --border-color: rgba(0, 0, 0, 0.1);
+    --shadow-color: rgba(0, 0, 0, 0.05);
+    --primary-accent: #007BFF;
+    --accent-text-color: #ffffff;
+    --timeline-dot-bg: #f0f2f5;
+    --logo-filter: invert(1);
+}
+
+/* --- Reset & Basic Setup --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* --- Animated Background Canvas --- */
+#particle-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* --- Styling Ikon Sosial --- */
+.social-links {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.social-links a {
+  color: var(--text-color);
+  transition: all 0.3s ease;
+  display: inline-block; /* Agar transform berfungsi */
+}
+
+.social-links a:hover {
+  color: var(--primary-accent);
+  transform: translateY(-4px); /* Efek mengangkat saat disentuh */
+}
+
+/* Penyesuaian untuk di tengah saat mode tablet/mobile */
+@media (max-width: 992px) {
+  .social-links {
+    justify-content: center;
+  }
+}
+
+/* --- Main Content Wrapper --- */
+.content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* --- Glassmorphism Effect --- */
+.glass-effect {
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 15px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 8px 32px 0 var(--shadow-color);
+    transition: all 0.3s ease;
+}
+
+/* --- Hero Section --- */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 4rem 0;
+}
+
+.hero-left {
+    flex: 1;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.hero-left h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--heading-color);
+}
+
+.hero-left h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--primary-accent);
+}
+
+.hero-left p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.hero-right {
+    flex: 0 0 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.photo-container {
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+}
+
+.photo-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    transition: transform 0.4s ease;
+}
+
+.photo-container:hover img {
+    transform: scale(1.05);
+}
+
+
+/* --- Buttons --- */
+.cta-buttons {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.btn {
+    padding: 12px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.btn-primary {
+    background-color: var(--primary-accent);
+    color: var(--accent-text-color);
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    border-color: var(--primary-accent);
+    color: var(--primary-accent);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 229, 255, 0.2);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--text-color);
+    border-color: var(--border-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--border-color);
+    color: var(--heading-color);
+    transform: translateY(-5px);
+}
+
+/* --- General Section Styling --- */
+section {
+    padding: 6rem 0;
+}
+
+section h3 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--heading-color);
+    position: relative;
+}
+
+section h3::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: var(--primary-accent);
+    margin: 0.5rem auto 0;
+    border-radius: 2px;
+}
+
+/* --- Skills Section --- */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 1.5rem;
+    text-align: center;
+}
+
+.skill-item {
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    cursor: default;
+}
+
+.skill-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px 0 var(--shadow-color);
+    border-color: rgba(0, 229, 255, 0.5);
+}
+
+.skill-item img {
+    width: 50px;
+    height: 50px;
+}
+
+body.light-mode .skill-item img[src*="express.svg"],
+body.light-mode .skill-item img[src*="nextjs-icon.svg"] {
+    filter: var(--logo-filter);
+}
+
+.skill-item span {
+    font-weight: 600;
+}
+
+
+/* --- Timeline Section --- */
+.timeline-container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.timeline-container::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: var(--border-color);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -2px;
+    border-radius: 2px;
+}
+
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%;
+}
+
+.timeline-item:nth-child(odd) {
+    left: 0;
+    padding-right: 60px;
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+    padding-left: 60px;
+}
+
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: -10px;
+    background-color: var(--timeline-dot-bg);
+    border: 4px solid var(--primary-accent);
+    top: 25px;
+    border-radius: 50%;
+    z-index: 1;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.timeline-item:nth-child(even)::after {
+    left: -10px;
+}
+
+.timeline-item:hover::after {
+    transform: scale(1.2);
+}
+
+.timeline-content {
+    padding: 20px 30px;
+    position: relative;
+}
+
+.timeline-content h4 {
+    font-size: 1.2rem;
+    color: var(--primary-accent);
+}
+
+.timeline-content h5 {
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content .date {
+    display: inline-block;
+    font-size: 0.9rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+    opacity: 0.8;
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    opacity: 0.7;
+}
+
+/* --- Scroll Animation --- */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Theme Switcher --- */
+.theme-switcher-wrapper {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+.theme-switcher {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+.theme-switcher input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #2c3e50;
+    transition: .4s;
+    border-radius: 34px;
+}
+.slider:before {
+    position: absolute;
+    content: "🌙";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+input:checked + .slider {
+    background-color: var(--primary-accent);
+}
+input:checked + .slider:before {
+    transform: translateX(26px);
+    content: "☀️";
+}
+
+/* =========================================== */
+/* --- PERBAIKAN RESPONSIVE --- */
+/* =========================================== */
+
+
+/* --- Tablet (Lebar < 992px) --- */
+@media (max-width: 992px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        min-height: auto; /* Dibuat auto agar tidak terlalu tinggi */
+        padding-top: 8rem; /* Beri jarak dari atas */
+    }
+    .hero-right {
+        margin-top: 3rem;
+    }
+    .cta-buttons {
+        justify-content: center;
+    }
+    .timeline-container::after {
+        left: 20px; /* Disesuaikan posisinya */
+    }
+    .timeline-item {
+        width: 100%;
+        padding-left: 60px; /* Dikecilkan paddingnya */
+        padding-right: 15px;
+    }
+    .timeline-item:nth-child(odd),
+    .timeline-item:nth-child(even) {
+        left: 0;
+    }
+    .timeline-item::after {
+        left: 10px; /* Disesuaikan posisinya */
+    }
+}
+
+/* --- Mobile (Lebar < 576px) --- */
+@media (max-width: 576px) {
+    .content-wrapper {
+        padding: 0 1rem;
+    }
+    .hero {
+        padding-top: 6rem;
+        padding-bottom: 4rem;
+    }
+    .hero-left {
+        padding: 1.5rem; /* Padding kartu dikecilkan */
+    }
+    .hero-left h1 {
+        font-size: 2.2rem; /* Ukuran font judul dikecilkan */
+    }
+    .hero-left h2 {
+        font-size: 1.1rem;
+    }
+    .hero-left p {
+        font-size: 0.95rem; /* Ukuran font paragraf dikecilkan */
+    }
+    .photo-container {
+        max-width: 300px;
+    }
+    section {
+        padding: 4rem 0; /* Jarak antar seksi dikecilkan */
+    }
+    section h3 {
+        font-size: 2rem;
+    }
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 1rem;
+    }
+    .skill-item {
+        padding: 1.5rem 0.5rem;
+    }
+    .timeline-container::after {
+        left: 15px;
+    }
+    .timeline-item {
+        padding-left: 45px;
+    }
+    .timeline-item::after {
+        left: 5px;
+        width: 18px;
+        height: 18px;
+    }
+    .timeline-content {
+        padding: 15px 20px;
+    }
+    .timeline-content h4 {
+        font-size: 1.1rem;
+    }
+    .btn {
+        padding: 10px 22px;
+        font-size: 0.9rem;
+    }
+    .theme-switcher-wrapper {
+        top: 15px;
+        right: 15px;
+    }
+}
