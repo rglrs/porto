@@ -1,264 +1,382 @@
 <!DOCTYPE html>
 <html lang="id">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portofolio | Ragil Ridho Saputra</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
-</head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
+  <body>
     <canvas id="particle-canvas"></canvas>
 
     <div class="theme-switcher-wrapper">
-        <label class="theme-switcher">
-            <input type="checkbox" id="theme-toggle" />
-            <span class="slider"></span>
-        </label>
+      <label class="theme-switcher">
+        <input type="checkbox" id="theme-toggle" />
+        <span class="slider"></span>
+      </label>
     </div>
 
     <div class="content-wrapper">
-        <header class="hero">
-            <div class="hero-left glass-effect reveal">
-                <h1>Ragil Ridho Saputra</h1>
-                <h2>Senior Front-End Developer & Mahasiswa Teknik Informatika</h2>
+      <header class="hero">
+        <div class="hero-left glass-effect reveal">
+          <h1>Ragil Ridho Saputra</h1>
+          <h2>Senior Front-End Developer & Mahasiswa Teknik Informatika</h2>
+          <p>
+            Seorang pengembang front-end dengan pengalaman 3 tahun yang
+            bersemangat dalam memecahkan masalah, mengoptimalkan performa, dan
+            mengubah desain menjadi antarmuka yang menarik. Tujuan utama saya
+            adalah memberikan pengalaman pengguna terbaik untuk memastikan
+            kepuasan klien.
+          </p>
+          <div class="cta-buttons">
+            <a href="mailto:rglridho127@gmail.com" class="btn btn-primary"
+              >Hubungi Saya</a
+            >
+            <a href="#experience" class="btn btn-secondary">Lihat Pengalaman</a>
+          </div>
+          <div class="social-links">
+            <a
+              href="https://linkedin.com/in/ragil-ridho-71932931a"
+              target="_blank"
+              aria-label="LinkedIn"
+              title="LinkedIn"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                width="28px"
+                height="28px"
+              >
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"
+                ></path>
+              </svg>
+            </a>
+            <a
+              href="https://github.com/rglrs"
+              target="_blank"
+              aria-label="GitHub"
+              title="GitHub"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                width="28px"
+                height="28px"
+              >
+                <path
+                  d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                ></path>
+              </svg>
+            </a>
+            <a
+              href="https://instagram.com/rgl_ridho"
+              target="_blank"
+              aria-label="Instagram"
+              title="Instagram"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                width="28px"
+                height="28px"
+              >
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919 1.266-.057 1.644-.069 4.85-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98-1.281-.058-1.689-.072-4.948-.072zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44 1.441-.645 1.441-1.44c0-.795-.645-1.44-1.441-1.44z"
+                ></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="hero-right reveal">
+          <div class="photo-container glass-effect">
+            <img src="fotoku2.jpg" alt="Foto Ragil Ridho Saputra" />
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section id="programming-languages" class="reveal">
+          <h3>Bahasa Pemrograman</h3>
+          <div class="skills-grid">
+            <div class="skill-item glass-effect">
+              <img
+                src="https://cdn.svgporn.com/logos/javascript.svg"
+                alt="JavaScript"
+              /><span>JavaScript</span>
+            </div>
+            <div class="skill-item glass-effect">
+              <img
+                src="https://cdn.svgporn.com/logos/typescript-icon.svg"
+                alt="TypeScript"
+              /><span>TypeScript</span>
+            </div>
+            <div class="skill-item glass-effect">
+              <img src="https://cdn.svgporn.com/logos/php.svg" alt="PHP" /><span
+                >PHP</span
+              >
+            </div>
+            <div class="skill-item glass-effect">
+              <img
+                src="https://cdn.svgporn.com/logos/gopher.svg"
+                alt="Go"
+              /><span>Go</span>
+            </div>
+            <div class="skill-item glass-effect">
+              <img
+                src="https://cdn.svgporn.com/logos/dart.svg"
+                alt="Dart"
+              /><span>Dart</span>
+            </div>
+            <div class="skill-item glass-effect">
+              <img src="https://cdn.svgporn.com/logos/c.svg" alt="C" /><span
+                >C</span
+              >
+            </div>
+            <div class="skill-item glass-effect">
+              <img
+                src="https://cdn.svgporn.com/logos/c-plusplus.svg"
+                alt="C++"
+              /><span>C++</span>
+            </div>
+            <div class="skill-item glass-effect">
+              <img
+                src="https://cdn.svgporn.com/logos/c-sharp.svg"
+                alt="C#"
+              /><span>C#</span>
+            </div>
+            <div class="skill-item glass-effect">
+              <img
+                src="https://cdn.svgporn.com/logos/python.svg"
+                alt="Python"
+              /><span>Python</span>
+            </div>
+            <div class="skill-item glass-effect">
+              <img
+                src="https://cdn.svgporn.com/logos/java.svg"
+                alt="Java"
+              /><span>Java</span>
+            </div>
+            <div class="skill-item glass-effect">
+              <img
+                src="https://cdn.svgporn.com/logos/kotlin-icon.svg"
+                alt="Kotlin"
+              /><span>Kotlin</span>
+            </div>
+          </div>
+        </section>
+
+        <section id="frameworks" class="reveal">
+          <h3>Framework & Library</h3>
+          <div class="skills-grid">
+            <div class="skill-item glass-effect">
+              <img
+                src="https://cdn.svgporn.com/logos/react.svg"
+                alt="React"
+              /><span>React.js</span>
+            </div>
+            <div class="skill-item glass-effect">
+              <img
+                src="https://cdn.svgporn.com/logos/react.svg"
+                alt="React Native"
+              /><span>React Native</span>
+            </div>
+            <div class="skill-item glass-effect">
+              <img
+                src="https://cdn.svgporn.com/logos/vue.svg"
+                alt="Vue.js"
+              /><span>Vue.js</span>
+            </div>
+            <div class="skill-item glass-effect">
+              <img
+                src="https://cdn.svgporn.com/logos/nextjs-icon.svg"
+                alt="Next.js"
+              /><span>Next.js</span>
+            </div>
+            <div class="skill-item glass-effect">
+              <img
+                src="https://cdn.svgporn.com/logos/nuxt-icon.svg"
+                alt="Nuxt.js"
+              /><span>Nuxt.js</span>
+            </div>
+            <div class="skill-item glass-effect">
+              <img
+                src="https://cdn.svgporn.com/logos/flutter.svg"
+                alt="Flutter"
+              /><span>Flutter</span>
+            </div>
+
+            <div class="skill-item glass-effect">
+              <img
+                src="https://cdn.svgporn.com/logos/tailwindcss-icon.svg"
+                alt="Tailwind CSS"
+              /><span>Tailwind CSS</span>
+            </div>
+            <div class="skill-item glass-effect">
+              <img
+                src="https://cdn.svgporn.com/logos/bootstrap.svg"
+                alt="Bootstrap"
+              /><span>Bootstrap</span>
+            </div>
+
+            <div class="skill-item glass-effect">
+              <img
+                src="https://cdn.svgporn.com/logos/express.svg"
+                alt="Express.js"
+              /><span>Express.js</span>
+            </div>
+            <div class="skill-item glass-effect">
+              <img
+                src="https://cdn.svgporn.com/logos/laravel.svg"
+                alt="Laravel"
+              /><span>Laravel</span>
+            </div>
+            <div class="skill-item glass-effect">
+              <img
+                src="https://cdn.svgporn.com/logos/flask.svg"
+                alt="Flask"
+              /><span>Flask</span>
+            </div>
+            <div class="skill-item glass-effect">
+              <img
+                src="https://cdn.svgporn.com/logos/fastapi-icon.svg"
+                alt="FastAPI"
+              /><span>FastAPI</span>
+            </div>
+          </div>
+        </section>
+
+        <section id="databases" class="reveal">
+          <h3>Database</h3>
+          <div class="skills-grid">
+            <div class="skill-item glass-effect">
+              <img
+                src="https://cdn.svgporn.com/logos/mysql-icon.svg"
+                alt="MySQL"
+              /><span>MySQL</span>
+            </div>
+            <div class="skill-item glass-effect">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg"
+                alt="SQL Server"
+              /><span>SQL Server</span>
+            </div>
+            <div class="skill-item glass-effect">
+              <img
+                src="https://cdn.svgporn.com/logos/postgresql.svg"
+                alt="PostgreSQL"
+              /><span>PostgreSQL</span>
+            </div>
+            <div class="skill-item glass-effect">
+              <img
+                src="https://cdn.svgporn.com/logos/mongodb-icon.svg"
+                alt="MongoDB"
+              /><span>MongoDB</span>
+            </div>
+            <div class="skill-item glass-effect">
+              <img
+                src="https://cdn.svgporn.com/logos/oracle.svg"
+                alt="Oracle"
+              /><span>Oracle</span>
+            </div>
+          </div>
+        </section>
+
+        <section id="experience" class="reveal">
+          <h3>Pengalaman Kerja</h3>
+          <div class="timeline-container">
+            <div class="timeline-item reveal">
+              <div class="timeline-content glass-effect">
+                <h4>Senior Front-End Developer</h4>
+                <h5>PT Encrypt Digital Solution</h5>
+                <span class="date">Januari 2022 - Sekarang</span>
                 <p>
-                    Seorang pengembang front-end dengan pengalaman 3 tahun yang
-                    bersemangat dalam memecahkan masalah, mengoptimalkan performa, dan
-                    mengubah desain menjadi antarmuka yang menarik. Tujuan utama saya
-                    adalah memberikan pengalaman pengguna terbaik untuk memastikan
-                    kepuasan klien.
+                  Memimpin pengembangan antarmuka untuk berbagai proyek,
+                  melakukan mentoring kepada developer junior, dan
+                  mengoptimalkan performa aplikasi web.
                 </p>
-                <div class="cta-buttons">
-                    <a href="mailto:rglridho127@gmail.com" class="btn btn-primary">Hubungi Saya</a>
-                    <a href="#experience" class="btn btn-secondary">Lihat Pengalaman</a>
-                </div>
-                <div class="social-links">
-                    <a href="https://linkedin.com/in/ragil-ridho-71932931a" target="_blank" aria-label="LinkedIn"
-                        title="LinkedIn">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="28px"
-                            height="28px">
-                            <path
-                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z">
-                            </path>
-                        </svg>
-                    </a>
-                    <a href="https://github.com/rglrs" target="_blank" aria-label="GitHub" title="GitHub">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="28px"
-                            height="28px">
-                            <path
-                                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z">
-                            </path>
-                        </svg>
-                    </a>
-                    <a href="https://instagram.com/rgl_ridho" target="_blank" aria-label="Instagram"
-                        title="Instagram">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="28px"
-                            height="28px">
-                            <path
-                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919 1.266-.057 1.644-.069 4.85-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98-1.281-.058-1.689-.072-4.948-.072zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44 1.441-.645 1.441-1.44c0-.795-.645-1.44-1.441-1.44z">
-                            </path>
-                        </svg>
-                    </a>
-                </div>
+              </div>
             </div>
-            <div class="hero-right reveal">
-                <div class="photo-container glass-effect">
-                    <img src="fotoku2.jpg" alt="Foto Ragil Ridho Saputra" />
-                </div>
+            <div class="timeline-item reveal">
+              <div class="timeline-content glass-effect">
+                <h4>Front-End Developer</h4>
+                <h5>SMK Negeri 1 Kota Mojokerto</h5>
+                <span class="date">Januari 2022 - Februari 2024</span>
+                <p>
+                  Mengembangkan UI dalam berbagai proyek dan mempelajari
+                  struktur fundamental dalam pengembangan front-end.
+                </p>
+              </div>
             </div>
-        </header>
+          </div>
+        </section>
 
-        <main>
-            <section id="programming-languages" class="reveal">
-                <h3>Bahasa Pemrograman</h3>
-                <div class="skills-grid">
-                    <div class="skill-item glass-effect">
-                        <img src="https://cdn.svgporn.com/logos/javascript.svg"
-                            alt="JavaScript" /><span>JavaScript</span>
-                    </div>
-                    <div class="skill-item glass-effect">
-                        <img src="https://cdn.svgporn.com/logos/typescript-icon.svg"
-                            alt="TypeScript" /><span>TypeScript</span>
-                    </div>
-                    <div class="skill-item glass-effect">
-                        <img src="https://cdn.svgporn.com/logos/php.svg" alt="PHP" /><span>PHP</span>
-                    </div>
-                    <div class="skill-item glass-effect">
-                        <img src="https://cdn.svgporn.com/logos/gopher.svg" alt="Go" /><span>Go</span>
-                    </div>
-                    <div class="skill-item glass-effect">
-                        <img src="https://cdn.svgporn.com/logos/dart.svg" alt="Dart" /><span>Dart</span>
-                    </div>
-                    <div class="skill-item glass-effect">
-                        <img src="https://cdn.svgporn.com/logos/c.svg" alt="C" /><span>C</span>
-                    </div>
-                    <div class="skill-item glass-effect">
-                        <img src="https://cdn.svgporn.com/logos/c-plusplus.svg" alt="C++" /><span>C++</span>
-                    </div>
-                    <div class="skill-item glass-effect">
-                        <img src="https://cdn.svgporn.com/logos/c-sharp.svg" alt="C#" /><span>C#</span>
-                    </div>
-                    <div class="skill-item glass-effect">
-                        <img src="https://cdn.svgporn.com/logos/python.svg" alt="Python" /><span>Python</span>
-                    </div>
-                    <div class="skill-item glass-effect">
-                        <img src="https://cdn.svgporn.com/logos/java.svg" alt="Java" /><span>Java</span>
-                    </div>
-                    <div class="skill-item glass-effect">
-                        <img src="https://cdn.svgporn.com/logos/kotlin-icon.svg" alt="Kotlin" /><span>Kotlin</span>
-                    </div>
-                </div>
-            </section>
+        <section id="education" class="reveal">
+          <h3>Riwayat Pendidikan</h3>
+          <div class="timeline-container">
+            <div class="timeline-item reveal">
+              <div class="timeline-content glass-effect">
+                <h4>D3 Teknik Informatika</h4>
+                <h5>Politeknik Elektronika Negeri Surabaya (PENS)</h5>
+                <span class="date">Agustus 2023 - Sekarang</span>
+                <p>
+                  Fokus dalam mata kuliah pemrograman dan aktif mengajari
+                  beberapa teman serta adik kelas yang berpotensi.
+                </p>
+              </div>
+            </div>
+            <div class="timeline-item reveal">
+              <div class="timeline-content glass-effect">
+                <h4>Multimedia</h4>
+                <h5>SMK Negeri 1 Kota Mojokerto</h5>
+                <span class="date">Agustus 2020 - Mei 2023</span>
+                <p>
+                  Mewakili LKS Jatim bidang IT Software, Juara 1 Film Pendek
+                  Galasinema, fokus pada audio video dan pemrograman.
+                </p>
+              </div>
+            </div>
+            <div class="timeline-item reveal">
+              <div class="timeline-content glass-effect">
+                <h4>Siswa</h4>
+                <h5>SMP Negeri 1 Kota Mojokerto</h5>
+                <span class="date">Agustus 2017 - Mei 2020</span>
+                <p>
+                  Meraih gelar Pramuka Garuda, anggota paduan suara HUT RI, dan
+                  aktif dalam berbagai perlombaan.
+                </p>
+              </div>
+            </div>
+            <div class="timeline-item reveal">
+              <div class="timeline-content glass-effect">
+                <h4>Siswa</h4>
+                <h5>SD Negeri Balongsari 1 Kota Mojokerto</h5>
+                <span class="date">Agustus 2011 - Mei 2017</span>
+                <p>
+                  Berpartisipasi aktif dan meraih juara dalam lomba catur,
+                  cerdas cermat, dan olahraga tradisional.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
 
-            <section id="frameworks" class="reveal">
-                <h3>Framework & Library</h3>
-                <div class="skills-grid">
-                    <div class="skill-item glass-effect">
-                        <img src="https://cdn.svgporn.com/logos/react.svg" alt="React" /><span>React.js</span>
-                    </div>
-                    <div class="skill-item glass-effect">
-                        <img src="https://cdn.svgporn.com/logos/vue.svg" alt="Vue.js" /><span>Vue.js</span>
-                    </div>
-                    <div class="skill-item glass-effect">
-                        <img src="https://cdn.svgporn.com/logos/nextjs-icon.svg" alt="Next.js" /><span>Next.js</span>
-                    </div>
-                    <div class="skill-item glass-effect">
-                        <img src="https://cdn.svgporn.com/logos/nuxt-icon.svg" alt="Nuxt.js" /><span>Nuxt.js</span>
-                    </div>
-                    <div class="skill-item glass-effect">
-                        <img src="https://cdn.svgporn.com/logos/express.svg" alt="Express.js" /><span>Express.js</span>
-                    </div>
-                    <div class="skill-item glass-effect">
-                        <img src="https://cdn.svgporn.com/logos/flutter.svg" alt="Flutter" /><span>Flutter</span>
-                    </div>
-                    <div class="skill-item glass-effect">
-                        <img src="https://cdn.svgporn.com/logos/laravel.svg" alt="Laravel" /><span>Laravel</span>
-                    </div>
-                    <div class="skill-item glass-effect">
-                        <img src="https://cdn.svgporn.com/logos/flask.svg" alt="Flask" /><span>Flask</span>
-                    </div>
-                    <div class="skill-item glass-effect">
-                        <img src="https://cdn.svgporn.com/logos/fastapi-icon.svg" alt="FastAPI" /><span>FastAPI</span>
-                    </div>
-                </div>
-            </section>
-
-            <section id="databases" class="reveal">
-                <h3>Database</h3>
-                <div class="skills-grid">
-                    <div class="skill-item glass-effect">
-                        <img src="https://cdn.svgporn.com/logos/mysql-icon.svg" alt="MySQL" /><span>MySQL</span>
-                    </div>
-                    <div class="skill-item glass-effect">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg"
-                            alt="SQL Server" /><span>SQL Server</span>
-                    </div>
-                    <div class="skill-item glass-effect">
-                        <img src="https://cdn.svgporn.com/logos/postgresql.svg"
-                            alt="PostgreSQL" /><span>PostgreSQL</span>
-                    </div>
-                    <div class="skill-item glass-effect">
-                        <img src="https://cdn.svgporn.com/logos/mongodb-icon.svg" alt="MongoDB" /><span>MongoDB</span>
-                    </div>
-                    <div class="skill-item glass-effect">
-                        <img src="https://cdn.svgporn.com/logos/oracle.svg" alt="Oracle" /><span>Oracle</span>
-                    </div>
-                </div>
-            </section>
-
-            <section id="experience" class="reveal">
-                <h3>Pengalaman Kerja</h3>
-                <div class="timeline-container">
-                    <div class="timeline-item reveal">
-                        <div class="timeline-content glass-effect">
-                            <h4>Senior Front-End Developer</h4>
-                            <h5>PT Encrypt Digital Solution</h5>
-                            <span class="date">Januari 2022 - Sekarang</span>
-                            <p>
-                                Memimpin pengembangan antarmuka untuk berbagai proyek,
-                                melakukan mentoring kepada developer junior, dan
-                                mengoptimalkan performa aplikasi web.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="timeline-item reveal">
-                        <div class="timeline-content glass-effect">
-                            <h4>Front-End Developer</h4>
-                            <h5>SMK Negeri 1 Kota Mojokerto</h5>
-                            <span class="date">Januari 2022 - Februari 2024</span>
-                            <p>
-                                Mengembangkan UI dalam berbagai proyek dan mempelajari
-                                struktur fundamental dalam pengembangan front-end.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="education" class="reveal">
-                <h3>Riwayat Pendidikan</h3>
-                <div class="timeline-container">
-                    <div class="timeline-item reveal">
-                        <div class="timeline-content glass-effect">
-                            <h4>D3 Teknik Informatika</h4>
-                            <h5>Politeknik Elektronika Negeri Surabaya (PENS)</h5>
-                            <span class="date">Agustus 2023 - Sekarang</span>
-                            <p>
-                                Fokus dalam mata kuliah pemrograman dan aktif mengajari
-                                beberapa teman serta adik kelas yang berpotensi.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="timeline-item reveal">
-                        <div class="timeline-content glass-effect">
-                            <h4>Multimedia</h4>
-                            <h5>SMK Negeri 1 Kota Mojokerto</h5>
-                            <span class="date">Agustus 2020 - Mei 2023</span>
-                            <p>
-                                Mewakili LKS Jatim bidang IT Software, Juara 1 Film Pendek
-                                Galasinema, fokus pada audio video dan pemrograman.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="timeline-item reveal">
-                        <div class="timeline-content glass-effect">
-                            <h4>Siswa</h4>
-                            <h5>SMP Negeri 1 Kota Mojokerto</h5>
-                            <span class="date">Agustus 2017 - Mei 2020</span>
-                            <p>
-                                Meraih gelar Pramuka Garuda, anggota paduan suara HUT RI, dan
-                                aktif dalam berbagai perlombaan.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="timeline-item reveal">
-                        <div class="timeline-content glass-effect">
-                            <h4>Siswa</h4>
-                            <h5>SD Negeri Balongsari 1 Kota Mojokerto</h5>
-                            <span class="date">Agustus 2011 - Mei 2017</span>
-                            <p>
-                                Berpartisipasi aktif dan meraih juara dalam lomba catur,
-                                cerdas cermat, dan olahraga tradisional.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
-
-        <footer class="reveal">
-            <p>
-                &copy; 2025 by Ragil Ridho Saputra. Dibuat dengan kemurnian hati.
-            </p>
-        </footer>
+      <footer class="reveal">
+        <p>&copy; 2025 by Ragil Ridho Saputra. Dibuat dengan kemurnian hati.</p>
+      </footer>
     </div>
 
     <script src="script.js"></script>
-</body>
-
+  </body>
 </html>
