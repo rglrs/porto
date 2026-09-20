@@ -16,30 +16,36 @@
   <body>
     <canvas id="particle-canvas"></canvas>
 
-    <div class="theme-switcher-wrapper">
-      <label class="theme-switcher">
-        <input type="checkbox" id="theme-toggle" />
-        <span class="slider"></span>
-      </label>
+    <div class="top-controls-wrapper">
+      <div class="lang-switcher" id="lang-switcher" role="group" aria-label="Language Switcher">
+        <button type="button" class="lang-btn active" data-lang="id" aria-label="Bahasa Indonesia">ID</button>
+        <button type="button" class="lang-btn" data-lang="en" aria-label="English">EN</button>
+      </div>
+
+      <div class="theme-switcher-wrapper">
+        <label class="theme-switcher" aria-label="Toggle dark/light mode">
+          <input type="checkbox" id="theme-toggle" />
+          <span class="slider"></span>
+        </label>
+      </div>
     </div>
 
     <div class="content-wrapper">
       <header class="hero">
         <div class="hero-left glass-effect reveal">
           <h1>Ragil Ridho Saputra</h1>
-          <h2>Senior Front-End Developer & Mahasiswa Teknik Informatika</h2>
-          <p>
-            Seorang pengembang front-end dengan pengalaman 3 tahun yang
-            bersemangat dalam memecahkan masalah, mengoptimalkan performa, dan
-            mengubah desain menjadi antarmuka yang menarik. Tujuan utama saya
-            adalah memberikan pengalaman pengguna terbaik untuk memastikan
-            kepuasan klien.
+          <h2 data-i18n="hero_role">Full-Stack Developer</h2>
+          <p data-i18n="hero_bio">
+            Lulusan D3 Teknik Informatika PENS dengan keahlian dalam rekayasa
+            web full-stack dan aplikasi mobile. Berfokus pada pembangunan sistem
+            yang skalabel, arsitektur bersih, dan pengalaman pengguna
+            yang intuitif.
           </p>
           <div class="cta-buttons">
-            <a href="mailto:rglridho127@gmail.com" class="btn btn-primary"
+            <a href="mailto:rglridho127@gmail.com" class="btn btn-primary" data-i18n="hero_contact"
               >Hubungi Saya</a
             >
-            <a href="#experience" class="btn btn-secondary">Lihat Pengalaman</a>
+            <a href="#experience" class="btn btn-secondary" data-i18n="hero_exp">Lihat Pengalaman</a>
           </div>
           <div class="social-links">
             <a
@@ -100,14 +106,14 @@
         </div>
         <div class="hero-right reveal">
           <div class="photo-container glass-effect">
-            <img src="foto_formal.jpg" alt="Foto Ragil Ridho Saputra" />
+            <img src="images/foto_formal.jpg" alt="Foto Ragil Ridho Saputra" />
           </div>
         </div>
       </header>
 
       <main>
         <section id="programming-languages" class="reveal">
-          <h3>Bahasa Pemrograman</h3>
+          <h3 data-i18n="sec_languages">Bahasa Pemrograman</h3>
           <div class="skills-grid">
             <div class="skill-item glass-effect">
               <img
@@ -177,7 +183,7 @@
         </section>
 
         <section id="frameworks" class="reveal">
-          <h3>Framework & Library</h3>
+          <h3 data-i18n="sec_frameworks">Framework & Library</h3>
           <div class="skills-grid">
             <div class="skill-item glass-effect">
               <img
@@ -257,7 +263,7 @@
         </section>
 
         <section id="databases" class="reveal">
-          <h3>Database</h3>
+          <h3 data-i18n="sec_databases">Database</h3>
           <div class="skills-grid">
             <div class="skill-item glass-effect">
               <img
@@ -292,29 +298,267 @@
           </div>
         </section>
 
+        <section id="portfolio" class="reveal">
+          <h3 data-i18n="sec_projects">Proyek Pemrograman</h3>
+          <div class="projects-grid">
+            <!-- Proyek 1: Vizada -->
+            <div class="project-card glass-effect">
+              <div class="project-image-wrapper">
+                <!-- Masukkan path file gambar Anda di atribut src di bawah ini (contoh: src="vizada.png") -->
+                <img
+                  src="images/vizada.png"
+                  alt="Vizada Project Preview"
+                  class="project-img"
+                  onload="this.style.display='block'"
+                  onerror="this.style.display='none'"
+                />
+              </div>
+              <div class="project-content">
+                <h4>Vizada</h4>
+                <p class="project-desc" data-i18n="proj1_desc">
+                  Platform manajemen operasional digital yang dirancang khusus untuk menyederhanakan proses bisnis percetakan, mulai dari penerimaan pesanan hingga pengiriman akhir.
+                </p>
+                <div class="project-features" data-i18n-html="proj1_features">
+                  <h5>Fitur Utama:</h5>
+                  <ul>
+                    <li><strong>Penerimaan Pesanan:</strong> Kelola dan lacak setiap pesanan pelanggan dari awal hingga akhir.</li>
+                    <li><strong>Estimasi Harga Otomatis:</strong> Hitung perkiraan biaya cetak berdasarkan spesifikasi pesanan dengan cepat.</li>
+                    <li><strong>Pelacakan Status Produksi:</strong> Berikan transparansi kepada pelanggan mengenai status pengerjaan pesanan mereka.</li>
+                    <li><strong>Katalog Layanan Digital:</strong> Tampilkan detail layanan cetak digital dan offset secara terorganisir.</li>
+                    <li><strong>Manajemen Pelanggan (CRM):</strong> Simpan dan kelola data pelanggan untuk membangun hubungan yang lebih baik.</li>
+                  </ul>
+                </div>
+                <div class="project-tags">
+                  <span class="tag">NEXT.JS</span>
+                  <span class="tag">PRISMA</span>
+                  <span class="tag">TAILWIND</span>
+                </div>
+                <button type="button" class="btn-project-detail">
+                  <span data-i18n="btn_project_detail">Detail Proyek</span> &rarr;
+                </button>
+              </div>
+            </div>
+
+            <!-- Proyek 2: TASCA (Mobile App & API) -->
+            <div class="project-card glass-effect">
+              <div class="project-image-wrapper">
+                <!-- Masukkan path file gambar Anda di atribut src di bawah ini (contoh: src="tasca.png") -->
+                <img
+                  src="images/tasca.png"
+                  alt="TASCA Project Preview"
+                  class="project-img"
+                  onload="this.style.display='block'"
+                  onerror="this.style.display='none'"
+                />
+              </div>
+              <div class="project-content">
+                <h4>TASCA (Mobile App & API)</h4>
+                <p class="project-desc" data-i18n="proj2_desc">
+                  Platform manajemen produktivitas harian komprehensif yang terdiri dari aplikasi mobile cross-platform dinamis dan didukung oleh arsitektur backend API yang tangguh serta skalabel.
+                </p>
+                <div class="project-features" data-i18n-html="proj2_features">
+                  <h5>Fitur Utama:</h5>
+                  <ul>
+                    <li><strong>Manajemen Tugas & Waktu:</strong> Fitur To-Do List dan Timer Pomodoro terintegrasi untuk memaksimalkan fokus pengguna.</li>
+                    <li><strong>Sistem Autentikasi Aman:</strong> Dilengkapi API khusus untuk registrasi dan login guna menjaga keamanan data pengguna.</li>
+                    <li><strong>Sistem Notifikasi Terpusat:</strong> Dukungan backend untuk mengelola dan mengirimkan notifikasi aktivitas atau pengingat secara real-time.</li>
+                    <li><strong>Integrasi Kalender & Mode Gelap:</strong> Pemantauan jadwal yang mudah dibaca dengan antarmuka yang mendukung Dark Mode.</li>
+                    <li><strong>Arsitektur Backend Skalabel:</strong> Backend dibangun menggunakan arsitektur layered (Controllers, Services, Repositories) dan terintegrasi dengan Docker untuk kemudahan deployment.</li>
+                  </ul>
+                </div>
+                <div class="project-tags">
+                  <span class="tag">FLUTTER</span>
+                  <span class="tag">DART</span>
+                  <span class="tag">GO (GOLANG)</span>
+                  <span class="tag">DOCKER</span>
+                  <span class="tag">REST API</span>
+                </div>
+                <button type="button" class="btn-project-detail">
+                  <span data-i18n="btn_project_detail">Detail Proyek</span> &rarr;
+                </button>
+              </div>
+            </div>
+
+            <!-- Proyek 3: Tahfizh App -->
+            <div class="project-card glass-effect">
+              <div class="project-image-wrapper">
+                <!-- Masukkan path file gambar Anda di atribut src di bawah ini (contoh: src="tahfizh.png") -->
+                <img
+                  src="images/tahfizh.png"
+                  alt="Tahfizh App Project Preview"
+                  class="project-img"
+                  onload="this.style.display='block'"
+                  onerror="this.style.display='none'"
+                />
+              </div>
+              <div class="project-content">
+                <h4>Tahfizh App</h4>
+                <p class="project-desc" data-i18n="proj3_desc">
+                  Platform manajemen program tahfizh berbasis web yang memudahkan pencatatan, pemantauan progres hafalan, serta evaluasi siswa secara digital dan terstruktur.
+                </p>
+                <div class="project-features" data-i18n-html="proj3_features">
+                  <h5>Fitur Utama:</h5>
+                  <ul>
+                    <li><strong>Pencatatan Hafalan & Murojaah:</strong> Lacak progres setoran hafalan harian dan pengulangan (murojaah) siswa dengan mudah.</li>
+                    <li><strong>Sistem Multi-Peran (Role-Based):</strong> Hak akses yang disesuaikan untuk Admin, Pengajar, dan Siswa untuk pengelolaan yang terpusat.</li>
+                    <li><strong>Manajemen Data Siswa:</strong> Kelola informasi profil dan riwayat akademik siswa tahfizh dalam satu dasbor.</li>
+                    <li><strong>Sistem Autentikasi Aman:</strong> Dilengkapi dengan sistem login (berbasis sesi/token) dan perlindungan middleware untuk menjaga privasi data.</li>
+                    <li><strong>Antarmuka Responsif:</strong> Desain UI/UX yang modern dan mudah digunakan, baik dari perangkat desktop maupun mobile.</li>
+                  </ul>
+                </div>
+                <div class="project-tags">
+                  <span class="tag">NEXT.JS</span>
+                  <span class="tag">TYPESCRIPT</span>
+                  <span class="tag">PRISMA</span>
+                  <span class="tag">TAILWIND</span>
+                </div>
+                <button type="button" class="btn-project-detail">
+                  <span data-i18n="btn_project_detail">Detail Proyek</span> &rarr;
+                </button>
+              </div>
+            </div>
+
+            <!-- Proyek 4: Mental Health Monitor -->
+            <div class="project-card glass-effect">
+              <div class="project-image-wrapper">
+                <!-- Masukkan path file gambar Anda di atribut src di bawah ini (contoh: src="mental-health.png") -->
+                <img
+                  src="images/mental-health.png"
+                  alt="Mental Health Monitor Project Preview"
+                  class="project-img"
+                  onload="this.style.display='block'"
+                  onerror="this.style.display='none'"
+                />
+              </div>
+              <div class="project-content">
+                <h4>Mental Health Monitor</h4>
+                <p class="project-desc" data-i18n="proj4_desc">
+                  Aplikasi web yang dirancang untuk membantu pengguna melacak dan memantau kondisi kesejahteraan mental mereka melalui sistem evaluasi berbasis data.
+                </p>
+                <div class="project-features" data-i18n-html="proj4_features">
+                  <h5>Fitur Utama:</h5>
+                  <ul>
+                    <li><strong>Pemantauan & Evaluasi:</strong> Pengguna dapat melakukan pencatatan dan evaluasi rutin terkait kondisi kesehatan mental mereka.</li>
+                    <li><strong>Dasbor Profil & Hasil:</strong> Halaman khusus bagi pengguna untuk mengelola profil dan melihat riwayat hasil evaluasi sebelumnya dengan jelas.</li>
+                    <li><strong>Pengolahan Dataset:</strong> Terintegrasi dengan sistem backend untuk mengelola dataset guna menghasilkan analisis data yang relevan.</li>
+                    <li><strong>Arsitektur Client-Server:</strong> Dibangun menggunakan pemisahan frontend dan backend yang terstruktur untuk memastikan performa aplikasi yang optimal.</li>
+                  </ul>
+                </div>
+                <div class="project-tags">
+                  <span class="tag">JAVASCRIPT</span>
+                  <span class="tag">PYTHON</span>
+                  <span class="tag">CSS</span>
+                  <span class="tag">WEB APP</span>
+                </div>
+                <button type="button" class="btn-project-detail">
+                  <span data-i18n="btn_project_detail">Detail Proyek</span> &rarr;
+                </button>
+              </div>
+            </div>
+
+            <!-- Proyek 5: Sibuk Ceria -->
+            <div class="project-card glass-effect">
+              <div class="project-image-wrapper">
+                <!-- Masukkan path file gambar Anda di atribut src di bawah ini (contoh: src="sibuk-ceria.png") -->
+                <img
+                  src="images/sibuk-ceria.png"
+                  alt="Sibuk Ceria Project Preview"
+                  class="project-img"
+                  onload="this.style.display='block'"
+                  onerror="this.style.display='none'"
+                />
+              </div>
+              <div class="project-content">
+                <h4>Sibuk Ceria</h4>
+                <p class="project-desc" data-i18n="proj5_desc">
+                  Aplikasi konseling digital untuk sekolah yang memudahkan guru Bimbingan Konseling (BK) dan siswa dalam menjalankan proses bimbingan, konsultasi, serta pengembangan diri secara modern dan efisien.
+                </p>
+                <div class="project-features" data-i18n-html="proj5_features">
+                  <h5>Fitur Utama:</h5>
+                  <ul>
+                    <li><strong>Dasbor Layanan & Manajemen Siswa:</strong> Pusat kendali bagi guru BK untuk mengelola data siswa, jadwal konseling, dan melacak laporan perkembangan secara terpusat.</li>
+                    <li><strong>Konseling Jarak Jauh (Chat & Video Call):</strong> Fitur komunikasi real-time dan panggilan video yang terintegrasi untuk sesi konsultasi online.</li>
+                    <li><strong>Booking Jadwal Otomatis:</strong> Memungkinkan siswa untuk memesan jadwal konsultasi secara mandiri tanpa perlu mengantre.</li>
+                    <li><strong>Edukasi Mandiri & Modul Assessment:</strong> Menyediakan materi pengembangan diri, literasi digital, serta sistem bagi guru untuk memberikan tugas dan evaluasi (assessment).</li>
+                    <li><strong>Catatan Riwayat & Rekomendasi Layanan:</strong> Sistem pencatatan riwayat komprehensif (prestasi hingga masalah siswa) yang didukung dengan rekomendasi layanan otomatis sesuai kebutuhan siswa.</li>
+                  </ul>
+                </div>
+                <div class="project-tags">
+                  <span class="tag">LARAVEL</span>
+                  <span class="tag">TAILWIND CSS</span>
+                  <span class="tag">LIVEWIRE</span>
+                  <span class="tag">ALPINE.JS</span>
+                </div>
+                <button type="button" class="btn-project-detail">
+                  <span data-i18n="btn_project_detail">Detail Proyek</span> &rarr;
+                </button>
+              </div>
+            </div>
+
+            <!-- Proyek 6: Shaman OS -->
+            <div class="project-card glass-effect">
+              <div class="project-image-wrapper">
+                <img
+                  src="images/shaman.png"
+                  alt="Shaman OS Project Preview"
+                  class="project-img"
+                  onload="this.style.display='block'"
+                  onerror="this.style.display='none'"
+                />
+              </div>
+              <div class="project-content">
+                <h4>Shaman OS</h4>
+                <p class="project-desc" data-i18n="proj6_desc">
+                  Platform Enterprise Resource Planning (ERP) dan Human Resource (HR) komprehensif berbasis web yang dirancang untuk mengelola administrasi, data karyawan, dan operasional internal. Sistem ini menggabungkan antarmuka frontend yang modern dengan arsitektur backend yang tangguh dan terstruktur.
+                </p>
+                <div class="project-features" data-i18n-html="proj6_features">
+                  <h5>Fitur Utama:</h5>
+                  <ul>
+                    <li><strong>Manajemen Penggajian & Kehadiran:</strong> Sistem terintegrasi untuk melacak data kehadiran (attendance) dan mengkalkulasi rincian gaji (payroll) karyawan secara presisi.</li>
+                    <li><strong>Dasbor & Manajemen Proyek:</strong> Pusat kendali operasional (dasbor) untuk memantau aktivitas perusahaan serta modul khusus untuk manajemen layanan proyek.</li>
+                    <li><strong>Sistem Manajemen Dokumen:</strong> Fasilitas penanganan berkas (file uploads) yang efisien dan terhubung langsung ke penyimpanan server terpusat.</li>
+                    <li><strong>Keamanan & Autentikasi:</strong> Mengamankan akses pengguna dengan sistem login berbasis enkripsi hash (Bcrypt) untuk melindungi data internal perusahaan.</li>
+                    <li><strong>Arsitektur Fullstack Skalabel:</strong> Frontend yang cepat dan responsif dibangun menggunakan Next.js, didukung oleh backend berskala enterprise menggunakan NestJS, Prisma ORM, dan infrastruktur Docker.</li>
+                  </ul>
+                </div>
+                <div class="project-tags">
+                  <span class="tag">NEXT.JS</span>
+                  <span class="tag">NESTJS</span>
+                  <span class="tag">TYPESCRIPT</span>
+                  <span class="tag">PRISMA</span>
+                  <span class="tag">DOCKER</span>
+                </div>
+                <button type="button" class="btn-project-detail">
+                  <span data-i18n="btn_project_detail">Detail Proyek</span> &rarr;
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section id="experience" class="reveal">
-          <h3>Pengalaman Kerja</h3>
+          <h3 data-i18n="sec_experience">Pengalaman Kerja</h3>
           <div class="timeline-container">
             <div class="timeline-item reveal">
               <div class="timeline-content glass-effect">
-                <h4>Senior Front-End Developer</h4>
+                <h4 data-i18n="exp1_role">Full-Stack Developer</h4>
                 <h5>PT Encrypt Digital Solution</h5>
-                <span class="date">Januari 2022 - Sekarang</span>
-                <p>
-                  Memimpin pengembangan antarmuka untuk berbagai proyek,
-                  melakukan mentoring kepada developer junior, dan
-                  mengoptimalkan performa aplikasi web.
+                <span class="date" data-i18n="exp1_date">Agustus 2024 - Sekarang</span>
+                <p data-i18n="exp1_desc">
+                  Mengembangkan solusi web end-to-end (frontend & backend),
+                  merancang integrasi API, serta mengoptimalkan performa dan
+                  keandalan sistem aplikasi produksi.
                 </p>
               </div>
             </div>
             <div class="timeline-item reveal">
               <div class="timeline-content glass-effect">
-                <h4>Front-End Developer</h4>
+                <h4 data-i18n="exp2_role">Front-End Developer</h4>
                 <h5>SMK Negeri 1 Kota Mojokerto</h5>
-                <span class="date">Januari 2022 - Februari 2024</span>
-                <p>
-                  Mengembangkan UI dalam berbagai proyek dan mempelajari
-                  struktur fundamental dalam pengembangan front-end.
+                <span class="date" data-i18n="exp2_date">Januari 2022 - Februari 2024</span>
+                <p data-i18n="exp2_desc">
+                  Mengembangkan antarmuka dan sistem informasi sekolah serta
+                  membangun struktur fundamental dalam pengembangan aplikasi web modern.
                 </p>
               </div>
             </div>
@@ -322,49 +566,28 @@
         </section>
 
         <section id="education" class="reveal">
-          <h3>Riwayat Pendidikan</h3>
+          <h3 data-i18n="sec_education">Riwayat Pendidikan</h3>
           <div class="timeline-container">
             <div class="timeline-item reveal">
               <div class="timeline-content glass-effect">
-                <h4>D3 Teknik Informatika</h4>
+                <h4 data-i18n="edu1_degree">D3 Teknik Informatika</h4>
                 <h5>Politeknik Elektronika Negeri Surabaya (PENS)</h5>
-                <span class="date">Agustus 2023 - Sekarang</span>
-                <p>
-                  Fokus dalam mata kuliah pemrograman dan aktif mengajari
-                  beberapa teman serta adik kelas yang berpotensi.
+                <span class="date" data-i18n="edu1_date">2023 - 2026 &bull; Lulus (Wisuda 17 Oktober 2026)</span>
+                <p data-i18n="edu1_desc">
+                  Telah menyelesaikan studi D3 Teknik Informatika dengan fokus
+                  pada rekayasa perangkat lunak web dan mobile. Aktif dalam
+                  pengembangan proyek aplikasi produksi serta kolaborasi tim.
                 </p>
               </div>
             </div>
             <div class="timeline-item reveal">
               <div class="timeline-content glass-effect">
-                <h4>Multimedia</h4>
+                <h4 data-i18n="edu2_degree">Multimedia & Rekayasa Perangkat Lunak</h4>
                 <h5>SMK Negeri 1 Kota Mojokerto</h5>
-                <span class="date">Agustus 2020 - Mei 2023</span>
-                <p>
-                  Mewakili LKS Jatim bidang IT Software, Juara 1 Film Pendek
-                  Galasinema, fokus pada audio video dan pemrograman.
-                </p>
-              </div>
-            </div>
-            <div class="timeline-item reveal">
-              <div class="timeline-content glass-effect">
-                <h4>Siswa</h4>
-                <h5>SMP Negeri 1 Kota Mojokerto</h5>
-                <span class="date">Agustus 2017 - Mei 2020</span>
-                <p>
-                  Meraih gelar Pramuka Garuda, anggota paduan suara HUT RI, dan
-                  aktif dalam berbagai perlombaan.
-                </p>
-              </div>
-            </div>
-            <div class="timeline-item reveal">
-              <div class="timeline-content glass-effect">
-                <h4>Siswa</h4>
-                <h5>SD Negeri Balongsari 1 Kota Mojokerto</h5>
-                <span class="date">Agustus 2011 - Mei 2017</span>
-                <p>
-                  Berpartisipasi aktif dan meraih juara dalam lomba catur,
-                  cerdas cermat, dan olahraga tradisional.
+                <span class="date">2020 - 2023</span>
+                <p data-i18n="edu2_desc">
+                  Mewakili LKS Jatim bidang IT Software Application, Juara 1 Film Pendek
+                  Galasinema, serta mendalami dasar pemrograman dan multimedia.
                 </p>
               </div>
             </div>
@@ -373,8 +596,27 @@
       </main>
 
       <footer class="reveal">
-        <p>&copy; 2025 by Ragil Ridho Saputra. Dibuat dengan kemurnian hati.</p>
+        <p data-i18n="footer_text">&copy; 2026 Ragil Ridho Saputra. Dirancang & dibangun dengan dedikasi dan performa tinggi.</p>
       </footer>
+    </div>
+
+    <!-- Modal Pop-up Detail Proyek -->
+    <div id="project-modal" class="project-modal-overlay" aria-hidden="true" role="dialog">
+      <div class="project-modal-container glass-effect">
+        <button type="button" class="modal-close-btn" id="modal-close-btn" aria-label="Tutup modal">&times;</button>
+        <div class="modal-image-wrapper">
+          <img id="modal-img" src="" alt="Project Preview" />
+        </div>
+        <div class="modal-content">
+          <h3 id="modal-title"></h3>
+          <p id="modal-desc" class="modal-desc"></p>
+          <div id="modal-features-container"></div>
+          <div class="modal-tags-wrapper">
+            <span class="modal-tags-label" data-i18n="modal_tech_label">Teknologi:</span>
+            <div id="modal-tags" class="project-tags"></div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script src="script.js"></script>
